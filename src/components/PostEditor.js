@@ -60,7 +60,7 @@ const PostEditor = () => {
           <HorizontalStack spacing={2}>
             <UserAvatar width={50} height={50} username={user.username} />
             <Typography variant="h5">
-              Inserisci un nuovo post!{user.username}?
+              Inserisci un nuovo post!
             </Typography>
           </HorizontalStack>
         )}
