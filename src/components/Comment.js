@@ -86,7 +86,7 @@ const Comment = (props) => {
         {props.profile ? (
           <Box>
             <Typography variant="subtitle2" color="text.secondary" gutterBottom>
-              <Moment locale="it" fromNow>{comment.createdAt}</Moment>{" "}
+              <Moment fromNow>{comment.createdAt}</Moment>{" "}
               {comment.edited && <>(Edited)</>}
             </Typography>
           </Box>
