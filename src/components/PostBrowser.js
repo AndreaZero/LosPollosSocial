@@ -14,6 +14,7 @@ import gas from "../assets/img/gas.png";
 import PostCard from "./PostCard";
 import SortBySelect from "./SortBySelect";
 import HorizontalStack from "./util/HorizontalStack";
+import { useMediaQuery } from "@mui/material";
 
 const PostBrowser = (props) => {
   const [posts, setPosts] = useState([]);
@@ -23,6 +24,8 @@ const PostBrowser = (props) => {
   const [sortBy, setSortBy] = useState("-createdAt");
   const [count, setCount] = useState(0);
   const user = isLoggedIn();
+  const mobileWidth = 600;
+  const isMobile = useMediaQuery(`(max-width: ${mobileWidth}px)`);
 
   const [search] = useSearchParams();
   const [effect, setEffect] = useState(false);
@@ -119,22 +122,41 @@ const PostBrowser = (props) => {
 
   return (
     <>
-      <Stack spacing={2}>
-
-          <HorizontalStack style={{
-            padding: "20px",
-        display: 'flex',
-        justifyContent: 'space-between',
-        boxShadow: '0px 0px 3px 0px black',
-        backgroundColor: '#001F4A',
-        borderRadius: '0.7rem',
+<Stack
+  style={{
+    backgroundColor: "#00001E",
+    padding: isMobile ? '20px' : '30px', // No padding on mobile
+    borderRadius: '1rem', // No border radius
+  }}
+  spacing={2}
+>
+      <Typography
+      style={{
         color: 'white',
-      }}>
-    <Typography style={{
-  color: 'white',
-  fontSize: "16px",
-}}>Hi {user.username}! 👋</Typography>
-            {props.createPost && <CreatePost />}
+        fontSize: "26px",
+        textAlign: 'center'
+      }}
+    >
+       Check out the last posts!
+    </Typography>
+
+  <HorizontalStack
+    style={{
+      padding: "20px",
+      display: 'flex',
+      justifyContent: 'space-between',
+      boxShadow: '0px 0px 3px 0px black',
+      backgroundColor: '#001F4A',
+      borderRadius: '0.7rem',
+      color: 'white',
+    }}
+  >
+    {props.createPost && <CreatePost />}
+
+    {isLoggedIn() && (
+      <h3>Hi {user.username}! 👋</h3>
+    )}
+
     <SortBySelect
               onSortBy={handleSortBy}
               sortBy={sortBy}
@@ -195,7 +217,7 @@ const PostBrowser = (props) => {
   activeStyle={{
     backgroundColor: 'yellow',
     color: 'black'
-  }} sx={{backgroundColor: '#00001e', color: 'yellow', padding: '10px', fontSize: '16px', boxShadow: "0px 0px 5px 0px black"}}  variant="text" size="small" onClick={handleBackToTop}>
+  }} sx={{backgroundColor: '#00001e', padding: '10px', fontSize: '16px', boxShadow: "0px 0px 5px 0px black"}}  variant="text" size="small" onClick={handleBackToTop}>
               Back to top
             </Button>
             </Typography>
