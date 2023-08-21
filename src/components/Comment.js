@@ -59,9 +59,9 @@ const Comment = (props) => {
   };
 
   let style = {
-    backgroundColor: "rgb(0,0,99)",
-    background: "linear-gradient(180deg, rgba(0,0,99,1) 0%, rgba(151,200,255,1) 0%, rgba(0,171,255,1) 81%)",
-    borderRadius: '1rem',
+    backgroundColor: "rgb(12,59,161)",
+    background: "linear-gradient(139deg, rgba(12,59,161,1) 26%, rgba(0,45,93,0.5767099075958508) 100%)",
+    borderRadius: '0.5rem',
     boxShadow: '0px 0px 3px 0px black',
     mb: theme.spacing(2),
     padding: "10px"
@@ -92,7 +92,9 @@ const Comment = (props) => {
           </Box>
         ) : (
           <HorizontalStack justifyContent="space-between">
+
             <HorizontalStack>
+              
               <ContentDetails
                 username={comment.commenter.username}
                 createdAt={comment.createdAt}
@@ -105,11 +107,15 @@ const Comment = (props) => {
               >
                 {minimised ? (
                   <AiOutlinePlus size={15} />
+                  
                 ) : (
                   <AiOutlineLine size={15} />
                 )}
+                
               </IconButton>
+              <span style={{color: 'white'}}>commented</span>
             </HorizontalStack>
+
             {!minimised && (
               <HorizontalStack spacing={1}>
                 <IconButton
@@ -152,8 +158,9 @@ const Comment = (props) => {
 
         {!minimised && (
           <Box               style={{
-            backgroundColor: "white",
-            padding: '10px',
+            backgroundColor: "#00001E",
+            padding: '15px',
+            color: 'white',
             borderRadius: "0.4rem",
           }} sx={{ mt: 1}} overflow="hidden">
             {!editing ? (
@@ -168,6 +175,7 @@ const Comment = (props) => {
             {replying && !minimised && (
               <Box sx={{ mt: 2 }}>
                 <CommentEditor
+                
                   comment={comment}
                   addComment={addComment}
                   setReplying={setReplying}
