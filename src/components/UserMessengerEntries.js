@@ -46,9 +46,9 @@ const UserMessengerEntries = (props) => {
           spacing={2}
           textAlign="center"
         >
-          <BiSad size={60} />
-          <Typography variant="h5">Nessuna conversazione 🙄</Typography>
-          <Typography color="text.secondary" sx={{ maxWidth: "70%" }}>
+          <BiSad style={{color: 'yellow'}} size={60} />
+          <Typography style={{color: 'white'}} variant="h5">Non ci sono chat</Typography>
+          <Typography style={{color: 'white'}} color="text.secondary" sx={{ maxWidth: "70%" }}>
             Clicca su 'Message' nel profilo di un utente per avviare una chat!
           </Typography>
         </Stack>
