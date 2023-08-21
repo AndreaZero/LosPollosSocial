@@ -31,7 +31,7 @@ const ContentDetails = ({ username, createdAt, edited, preview }) => {
         {!preview && (
           <>
             {" "}
-            <Moment style={{color: 'yellow'}}  locale='it' fromNow>{createdAt}</Moment> {edited && <>
+            <Moment style={{color: 'yellow'}} fromNow>{createdAt}</Moment> {edited && <>
               <span style={{color: '#19A5F7'}}>(Edited)</span></>}
             <FontAwesomeIcon style={{color: "white", marginLeft: "4px"}} icon={faClockFour}></FontAwesomeIcon>
           </>
