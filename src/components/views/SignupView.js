@@ -85,6 +85,11 @@ const SignupView = () => {
         <Typography variant="h5" gutterBottom>
           Registrati
         </Typography>
+
+        <Typography style={{fontSize:'14px'}}gutterBottom>
+          You can register with fake email or whatever data you want.<br />
+          This is just for testing and having fun :)
+        </Typography>
  
         <Box component="form" onSubmit={handleSubmit}>
           <TextField
