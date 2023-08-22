@@ -133,11 +133,11 @@ const PostBrowser = (props) => {
       <Typography
       style={{
         color: 'white',
-        fontSize: "26px",
+        fontSize: "20px",
         textAlign: 'center'
       }}
     >
-       Check out the last posts!
+  Welcome! Check out the latest posts
     </Typography>
 
   <HorizontalStack
