@@ -112,11 +112,10 @@ const PostCard = (props) => {
             spacing={1}
             sx={{
               backgroundColor: "#00001E",
-              width: "100px",
+              width: "50px",
               padding: theme.spacing(1),
               color: 'yellow',
               boxShadow: '0px 0px 15px 0px black', // Aggiungi questa linea per il bordo a destra
-
             }}
           >
   <LikeBox
@@ -130,7 +129,7 @@ const PostCard = (props) => {
       fontWeight: 'lighter'
     }}> 
       <br />
-      you like this! 🤩
+      like! 🤩
     </h5>
   ) : (
     <h5 style={{
@@ -217,26 +216,25 @@ const PostCard = (props) => {
 
 
 
-            <HorizontalStack style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              backgroundColor: "#00001E",
-              maxHeight: "30px",
-              marginTop: "0.4rem",
-              padding:"10px",
-              borderRadius: "0.3rem"
-          
-            }}justifyContent="space-between">
+<HorizontalStack
+  style={{
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginTop: "0.4rem",
+    padding: "10px",
+    borderRadius: "0.3rem"
+  }}
+>
 
 <Typography
 variant="subtitle2"
 color="text.secondary"
-sx={{ fontWeight: "bolder", color: "white", textAlign: 'right', fontSize: '12px'}}
+sx={{ fontWeight: "bolder", color: "#19A4F6", textAlign: 'right', fontSize: '12px'}}
 >
   
 <FontAwesomeIcon style={{ marginLeft: "3px", marginRight: '5px'}} icon={faThumbsUp}></FontAwesomeIcon>
 {post.likeCount} like
-<FontAwesomeIcon style={{ marginLeft: "7px", marginRight: '5px'}} icon={faMinus}></FontAwesomeIcon>
+<FontAwesomeIcon style={{ marginLeft: "7px", marginRight: '8px'}} icon={faMinus}></FontAwesomeIcon>
 <FontAwesomeIcon  style={{ marginRight: '5px'}}icon={faComment}></FontAwesomeIcon>
 {post.commentCount === 0 ? (
 "0 comments" 
@@ -245,22 +243,23 @@ sx={{ fontWeight: "bolder", color: "white", textAlign: 'right', fontSize: '12px'
 ) : (
 `(${post.commentCount})`
 )}
+
 </Typography>
+
+
 {!isMobile && (
-  
-    <h5 style={{ color: 'white' }}>
-      <span style={{ color: 'yellow' }}>
+    <div style={{ color: 'white' }}>
+      <span style={{ color: 'yellow', marginRight: '5px' }}>
         {post.hashtags.length > 0 ? post.hashtags : ''}
       </span>
-    </h5>
-  )}
-</HorizontalStack>
-              <Box>
-                <UserLikePreview
+      <UserLikePreview
                   postId={post._id}
                   userLikePreview={post.userLikePreview}
                 />
-              </Box>
+    </div>
+  )}
+</HorizontalStack>
+            
           </PostContentBox>
         </HorizontalStack>
       </Box>
