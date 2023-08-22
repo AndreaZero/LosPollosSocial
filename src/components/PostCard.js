@@ -222,7 +222,7 @@ const PostCard = (props) => {
     justifyContent: 'space-between',
     marginTop: "0.4rem",
     padding: "10px",
-    borderRadius: "0.3rem"
+    borderTop: "1px solid rgb(25,164,246)" // Aggiungi il bordo superiore qui
   }}
 >
 
