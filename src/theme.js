@@ -24,8 +24,8 @@ const theme = createTheme({
     MuiInputBase: {
       styleOverrides: {
         input: {
-
-          fontWeight: "bold"
+          fontWeight: "bold",
+          color: 'grey'
         },
       }
     },
